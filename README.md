@@ -218,4 +218,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **Yoav Ellinson** and **Ilai Zaidel** for creating the Python wrapper for the AudioLabs signal generator
 - NVIDIA for PyTorch containers
 - The acoustic signal processing community
-- **Prof. Sharon Gannot** (supervisor) and **Dr. Bracha Goldstein Laufer** for their guidance and contributions to the research
+- **Prof. Sharon Gannot** and **Dr. Bracha Goldstein Laufer** for their guidance and contributions to the research
