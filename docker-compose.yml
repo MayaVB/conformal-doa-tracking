@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  unet:
+    build:
+      context: .
+      dockerfile: docker/unet/Dockerfile
+    image: conformal-doa/unet:latest
+    container_name: conformal-doa-unet
+    volumes:
+      - .:/workspace/unet
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ~/.Xauthority:/home/mayavb/.Xauthority:rw
+    environment:
+      - DISPLAY=${DISPLAY}
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+    runtime: nvidia
+    shm_size: '8gb'
+    stdin_open: true
+    tty: true
+    working_dir: /workspace/unet/UNet_tracking
+
+  dataset_gen:
+    build:
+      context: .
+      dockerfile: docker/dataset_gen/Dockerfile
+    image: conformal-doa/dataset_gen:latest
+    container_name: conformal-doa-dataset-gen
+    volumes:
+      - .:/workspace/unet
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ~/.Xauthority:/home/mayavb/.Xauthority:rw
+    environment:
+      - DISPLAY=${DISPLAY}
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+    runtime: nvidia
+    shm_size: '8gb'
+    stdin_open: true
+    tty: true
+    working_dir: /workspace/unet/data_generation

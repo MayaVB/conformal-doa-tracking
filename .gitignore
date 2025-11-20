@@ -1,3 +1,9 @@
+# user added files
+plots/
+checkpoints_baseline/
+**/mayas_notes.yml
+*.png
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -205,3 +211,7 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Docker related files (keep Dockerfiles but ignore runtime artifacts)
+.dockerignore
+*.log

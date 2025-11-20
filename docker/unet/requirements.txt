@@ -1,0 +1,43 @@
+# Core ML/DL packages
+torch>=1.13.0
+torchvision
+torchaudio
+
+# Data science and numerical computing
+numpy
+scipy
+pandas
+matplotlib
+seaborn
+
+# Progress bars and utilities
+tqdm
+argparse
+
+# Weights & Biases for experiment tracking
+wandb
+
+# Audio processing
+librosa
+soundfile
+
+# Image processing
+Pillow
+
+# Scientific computing
+scikit-learn
+
+# File I/O and utilities
+pathlib2
+pyyaml
+
+# Jupyter and development
+jupyter
+ipython
+
+# Testing
+pytest
+
+# Additional packages that might be needed
+opencv-python-headless
+h5py
