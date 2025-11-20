@@ -76,10 +76,10 @@ def test_model(
     with torch.inference_mode():
         
         # Compute conformal prediction threshold using a calibration set
-        # threshold = compute_threshold_from_calibration(model, calibration_loader, device="cuda", alpha=0.05)
+        threshold = compute_threshold_from_calibration(model, calibration_loader, device="cuda", alpha=0.05)
+        
         # sys.exit()
-
-        threshold = 4.19 #  alpha = 0.1 -> thr = 2.45266 ; alpha = 0.05 -> thr = 3.19444  ;  alpha = 0.02 -> thr = 4.19
+        # threshold = 4.19 #  alpha = 0.1 -> thr = 2.45266 ; alpha = 0.05 -> thr = 3.19444  ;  alpha = 0.02 -> thr = 4.19
         logging.info(f"Computed conformal threshold: {threshold:.4f} deg")
 
         transition_matrix = build_transition_matrix(num_classes, sigma_deg=sigma_deg, doa_step=angle_step)
